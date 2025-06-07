@@ -16,7 +16,7 @@ const allFiles = [
     },
     {
         id: 'file3',
-        name: '开发环境配置手册.pdf',
+        name: 'shell脚本.pdf',
         lanzouUrl: 'https://pan.lanzou.com/i345678',
         password: 'devmanual'
     },

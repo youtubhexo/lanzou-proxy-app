@@ -24,7 +24,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: your-lanzou-proxy-project # 你的Cloudflare Pages项目名称
+          projectName: lanzou-proxy-app # 你的Cloudflare Pages项目名称
           directory: public # 这是关键，指定你的静态文件目录
           # 如果你的网站不需要构建过程 (纯HTML/CSS/JS)，构建命令可以留空
           # buildCommand: ''
