@@ -10,7 +10,7 @@ const allFiles = [
     },
     {
         id: 'file2',
-        name: '精选图片壁纸包.rar',
+        name: '咸鱼市场',
         lanzouUrl: 'https://pan.lanzou.com/i789012',
         password: 'imagepwd'
     },
