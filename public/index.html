@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的软件分享站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>我的软件分享</h1>
+        <p>这里收集了一些我分享的软件和文件，点击下载按钮后输入密码即可获取。</p>
+
+        <div class="search-and-pagination-controls">
+            <input type="text" id="search-input" placeholder="搜索文件...">
+            <div id="pagination-container" class="pagination-controls">
+            </div>
+        </div>
+
+        <div id="file-list">
+        </div>
+    </div>
+
+    <div id="password-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>下载：<span id="modal-filename"></span></h2>
+            <input type="password" id="modal-password-input" placeholder="请输入下载密码">
+            <button id="modal-download-button">确认下载</button>
+            <p id="modal-message" class="error-message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #eef1f5;
+  color: #34495e;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* 顶部对齐 */
+  min-height: 100vh;
+  margin: 0;
+  padding: 30px 15px;
+  /* 增加上下边距 */
+  box-sizing: border-box;
+  /* 包含 padding 在宽度内 */
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 700px;
+  /* 适当加大容器宽度 */
+  width: 100%;
+}
+
+h1,
+h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.search-and-pagination-controls {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  /* 搜索框和分页间距 */
+}
+
+#search-input {
+  width: calc(100% - 22px);
+  padding: 12px 10px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: #409eff;
+  box-shadow: 0 0 0 3px rgba(64, 158, 255, 0.2);
+  outline: none;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  /* 页码按钮间距 */
+  flex-wrap: wrap;
+  /* 自动换行 */
+}
+
+.pagination-controls button {
+  background-color: #f0f2f5;
+  color: #606266;
+  padding: 8px 15px;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: #e4e7ed;
+  color: #303133;
+  border-color: #c0c4cc;
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: #f0f2f5;
+  color: #a8abb2;
+}
+
+.pagination-controls button.active-page {
+  background-color: #409eff;
+  color: white;
+  border-color: #409eff;
+  font-weight: bold;
+}
+
+.file-item {
+  background-color: #f7f9fc;
+  border: 1px solid #ebeef5;
+  padding: 18px 25px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.file-item:hover {
+  background-color: #eef1f5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.file-item .file-name {
+  font-weight: 500;
+  color: #303133;
+  flex-grow: 1;
+  font-size: 17px;
+}
+
+.file-item button {
+  margin-left: 20px;
+  background-color: #67c23a;
+  /* 绿色下载按钮 */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.file-item button:hover {
+  background-color: #5cb838;
+}
+
+input[type="password"] {
+  width: calc(100% - 22px);
+  padding: 12px 10px;
+  margin: 15px 0;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+button {
+  background-color: #409eff;
+  /* 蓝色通用按钮 */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #3a8ee6;
+  transform: translateY(-1px);
+}
+
+.error-message {
+  color: #f56c6c;
+  /* 红色错误信息 */
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.success-message {
+  color: #67c23a;
+  /* 绿色成功信息 */
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* 模态框样式 */
+.modal {
+  display: flex;
+  /* 使用 flexbox 居中内容 */
+  position: fixed;
+  z-index: 1000;
+  /* 确保在最上层 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* 更深的半透明背景 */
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  position: relative;
+  text-align: center;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+.close-button {
+  color: #909399;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #303133;
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .file-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .file-item button {
+    margin-top: 15px;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .search-and-pagination-controls {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #search-input {
+    width: 100%;
+  }
+}
